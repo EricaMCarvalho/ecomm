@@ -1,0 +1,29 @@
+{
+  "name": "roma",
+  "version": "1.0.0",
+  "description": "Roma Doces de Vitrine",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon server.js",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricaMCarvalho/roma-ecomm.git"
+  },
+  "author": "Erica Melo de Carvalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricaMCarvalho/roma-ecomm/issues"
+  },
+  "homepage": "https://github.com/EricaMCarvalho/roma-ecomm#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.9"
+  }
+}

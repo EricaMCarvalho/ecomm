@@ -1,0 +1,8 @@
+PUT http://localhost:5000/api/products/60e5f30f10d92c4ab2e4c393
+content-type: application/json
+
+{
+  "name": "Macarons (updated)",
+  "description": "Sabores: Café, Chocolate, Tangerina, Maracujá, Maçã verde, Pistache, Caramelo com flor de sal e Lemon curd. Valor pela unidade. Acima de 40 unidades - R$4,00 cada",
+  "isFeatured": false
+}
