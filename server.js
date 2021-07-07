@@ -4,6 +4,7 @@ const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 
 const productRoutes = require('./routes/products');
+const userRoutes = require('./routes/users');
 
 const app = express();
 
@@ -17,6 +18,7 @@ connectDB();
 app.use(express.json());
 
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => res.send('API is running...'));
 

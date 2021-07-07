@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/users
+content-type: application/json
+
+{
+  "givenName": "Erica",
+  "surname": "Melo de Carvalho",
+  "email": "ericamelo@email.com",
+  "phone": "8935222198"
+}

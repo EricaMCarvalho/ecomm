@@ -12,7 +12,8 @@ connectDB();
 const importData = async () => {
   try {
     await Product.create(productData);
-    console.log('Data imported')
+    console.log('Data imported');
+    console.log('Disconnecting MongoDB...');
     process.exit();
   } catch (error) {
     console.log(error);
@@ -23,6 +24,7 @@ const deleteData = async () => {
   try {
     await Product.deleteMany()
     console.log('Data deleted')
+    console.log('Disconnecting MongoDB...');
     process.exit()
   } catch (error) {
     console.log(error);

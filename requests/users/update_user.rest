@@ -1,0 +1,7 @@
+PUT http://localhost:5000/api/users/60e61055a59cb052851ac8cc
+content-type: application/json
+
+{
+  "givenName": "Maisa",
+  "email": "maisa@email.com"
+}
