@@ -23,9 +23,6 @@ const UserSchema = new mongoose.Schema({
     maxlength: [11, 'Phone number can not be longer than 11 characters. Format: (XX) X XXXXX-XXXX'],
     required: [true, 'Please add a phone number']
   },
-  address: {
-    type: String
-  },
   googleId: String,
   instagramId: String,
   password: {
@@ -37,6 +34,8 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+}, {
+  timestamps: true
 })
 
 module.exports = mongoose.model('User', UserSchema);

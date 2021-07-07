@@ -16,7 +16,8 @@ const ProductSchema = new mongoose.Schema({
     required: [true, 'Please add a price']
   },
   image: {
-    type: String
+    type: String,
+    required: [true, 'Please add an image']
   },
   countInStock: {
     type: Number,
@@ -27,6 +28,8 @@ const ProductSchema = new mongoose.Schema({
     default: false
   },
   slug: String
+}, {
+  timestamps: true
 })
 
 ProductSchema.pre('save', function(next) {

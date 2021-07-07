@@ -5,13 +5,16 @@ dotenv.config();
 
 const connectDB = require('./config/database');
 const Product = require('./models/Product');
+const User = require('./models/User');
 const productData = require('./data/products');
+const userData = require('./data/users');
 
 connectDB();
 
 const importData = async () => {
   try {
     await Product.create(productData);
+    await User.create(userData);
     console.log('Data imported');
     console.log('Disconnecting MongoDB...');
     process.exit();
