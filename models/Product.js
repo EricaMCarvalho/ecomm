@@ -24,7 +24,8 @@ const ProductSchema = new mongoose.Schema({
   isFeatured: {
     type: Boolean,
     default: false
-  }
+  },
+  slug: String
 })
 
 module.exports = mongoose.model('Product', ProductSchema);
