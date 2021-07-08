@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const sendTokenResponse = require('../utils/sendTokenResponse');
 const { authenticateToken } = require('../middleware/auth');
-const { register, login, getProfile, updateProfile } = require('../controllers/auth');
+const { register, login, getProfile, updateProfile, updatePassword, forgotPassword, resetPassword } = require('../controllers/auth');
 
 const router = express.Router();
 
@@ -21,14 +21,10 @@ router.get('/google/callback', passport.authenticate('google'), (req, res) => {
 
 router.post('/register', register);
 router.post('/login', login);
-
-router.route('profile').get(authenticateToken, getProfile).put(authenticateToken, updateProfile);
-
-/**
- * Route:       PUT /api/auth/updatepassword
- * Description: Update Password
- * Access:      Private
- */
+router.route('/profile').get(authenticateToken, getProfile).put(authenticateToken, updateProfile);
+router.put('/updatepassword', authenticateToken, updatePassword);
+router.post('/forgotpassword', forgotPassword);
+router.put('/resetpassword/:resettoken', resetPassword);
 
 module.exports = router;
 
