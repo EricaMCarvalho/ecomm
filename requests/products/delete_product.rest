@@ -1,1 +1,2 @@
 DELETE http://localhost:5000/api/products/60e60103c3bb464d4577db50
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTY1ZmIyZTRkNjdhNjc4NDg0NWFkNCIsImlhdCI6MTYyNTcxMDcxNH0.8_EtAIfFSVVh7JzFKJkf2Xuj24Llg0M53P_oT7mS37s

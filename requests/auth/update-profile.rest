@@ -1,0 +1,10 @@
+PUT http://localhost:5000/api/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTY1ZmIyZTRkNjdhNjc4NDg0NWFkNCIsImlhdCI6MTYyNTcxMDcxNH0.8_EtAIfFSVVh7JzFKJkf2Xuj24Llg0M53P_oT7mS37s
+Content-Type: application/json
+
+{
+  "givenName": "Robert",
+  "surname": "A",
+  "email": "maisa@maisa.com",
+  "password": "12345678"
+}

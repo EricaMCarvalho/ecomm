@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
   givenName: {
@@ -18,13 +19,7 @@ const UserSchema = new mongoose.Schema({
       'Please add a valid email',
     ],
   },
-  phone: {
-    type: String,
-    maxlength: [11, 'Phone number can not be longer than 11 characters. Format: (XX) X XXXXX-XXXX'],
-    required: [true, 'Please add a phone number']
-  },
   googleId: String,
-  instagramId: String,
   password: {
     type: String,
     minlength: 8,
@@ -36,6 +31,18 @@ const UserSchema = new mongoose.Schema({
   },
 }, {
   timestamps: true
-})
+});
+
+UserSchema.pre('save', async function(next) {
+  if (this.password) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
+  next();
+});
+
+UserSchema.methods.isValidPassword = async function(password) {
+  return await bcrypt.compare(password, this.password);
+}
 
 module.exports = mongoose.model('User', UserSchema);
