@@ -26,10 +26,25 @@ html {
   box-sizing: border-box;
   margin: 0 auto; }
 
+.app {
+  min-height: 100vh;
+  position: relative; }
+
 body {
   font-size: 1.5rem;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif; }
+
+.footer {
+  background-color: #fcece5;
+  color: #dfb183;
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
+  .footer__text {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem; }
 
 .header {
   padding: 1rem;
