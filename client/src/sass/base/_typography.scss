@@ -3,3 +3,23 @@ body {
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
 }
+
+.heading-primary {
+  color: $color-primary;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-top: 4rem;
+}
+
+.heading-secondary {
+  font-family: 'Pinyon Script', cursive;
+  color: $color-primary-dark;
+  font-size: 2.5rem;
+  color: $color-primary;
+  text-align: center;
+  padding: 1rem;
+}

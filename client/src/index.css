@@ -30,10 +30,36 @@ html {
   min-height: 100vh;
   position: relative; }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 body {
   font-size: 1.5rem;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif; }
+
+.heading-primary {
+  color: #dfb183;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-top: 4rem; }
+
+.heading-secondary {
+  font-family: 'Pinyon Script', cursive;
+  color: #e6bf98;
+  font-size: 2.5rem;
+  color: #dfb183;
+  text-align: center;
+  padding: 1rem; }
 
 .footer {
   background-color: #fcece5;
@@ -150,3 +176,35 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   transform: translateX(-30rem); }
+
+.hero {
+  height: 90vh;
+  position: relative;
+  background-image: url(http://localhost:3000/images/macaron.png);
+  background-size: cover; }
+  .hero__text {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 30vh;
+    animation: moveInBottom 1s; }
+    .hero__text:before, .hero__text:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 30px; }
+    .hero__text:before {
+      top: -30px;
+      background-image: url(http://localhost:3000/images/up.png);
+      background-size: repeat-x; }
+    .hero__text:after {
+      bottom: -30px;
+      background-image: url(http://localhost:3000/images/down.png);
+      background-size: repeat-x; }
+  .hero__images {
+    position: relative; }
+  .hero__image {
+    position: absolute;
+    top: 0; }

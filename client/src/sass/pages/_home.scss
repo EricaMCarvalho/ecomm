@@ -1,0 +1,45 @@
+.hero {
+  height: 90vh;
+  position: relative;
+  background-image: url(http://localhost:3000/images/macaron.png);
+  background-size: cover;
+
+  &__text {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 30vh;
+    animation: moveInBottom 1s;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 30px;
+    }
+
+    &:before {
+      top: -30px;
+      background-image: url(http://localhost:3000/images/up.png);
+      background-size: repeat-x;
+    }
+
+    &:after {
+      bottom: -30px;
+      background-image: url(http://localhost:3000/images/down.png);
+      background-size: repeat-x;
+    }
+  }
+
+  &__images {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+  }
+}
