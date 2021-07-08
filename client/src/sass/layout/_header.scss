@@ -1,0 +1,44 @@
+.header {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background-color: $color-primary-light;
+  z-index: 1000;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+
+  &__logo-box {
+    float: left;
+  }
+
+  &__button {
+    position: absolute;
+    cursor: pointer;
+    height: 8rem;
+    width: 5.5rem;
+  }
+
+  &__button--right {
+    right: 0;
+  }
+
+  &__button--left:hover {
+    transform: scale(1.1) translateY(-2px);
+  }
+
+  &__button--left:active {
+    transform: scale(1) translateY(1px);
+  }
+
+  &__button--left {
+    font-size: 3rem;
+    right: 5.5rem;
+  }
+
+  &__icon {
+    @include abs-center;
+    color: $color-primary;
+  }
+}

@@ -1,0 +1,137 @@
+/*
+COLORS
+
+#fec89a
+#ffd7ba
+#FFE5D9
+#ECE4DB
+#D8E2DC
+#E8E8E4
+#F8EDEB
+#FAE1DD
+#FCD5CE
+#FEC5BB
+*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0 auto; }
+
+body {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif; }
+
+.header {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background-color: #fcece5;
+  z-index: 1000;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2); }
+  .header__logo-box {
+    float: left; }
+  .header__button {
+    position: absolute;
+    cursor: pointer;
+    height: 8rem;
+    width: 5.5rem; }
+  .header__button--right {
+    right: 0; }
+  .header__button--left:hover {
+    transform: scale(1.1) translateY(-2px); }
+  .header__button--left:active {
+    transform: scale(1) translateY(1px); }
+  .header__button--left {
+    font-size: 3rem;
+    right: 5.5rem; }
+  .header__icon {
+    color: #dfb183; }
+    .header__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%); }
+
+.navigation__checkbox {
+  display: none; }
+
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #dfb183;
+  transition: all 0.2s; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
+
+.navigation__icon::before, .navigation__icon::after {
+  content: ''; }
+
+.navigation__icon::before {
+  top: -1.1rem; }
+
+.navigation__icon::after {
+  top: 1.1rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1.3rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1.3rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  left: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  left: 0;
+  transform: rotate(-135deg); }
+
+.navigation__nav {
+  position: fixed;
+  background-color: #fcece5;
+  top: 8rem;
+  right: -30rem;
+  width: 30rem;
+  height: 100vh;
+  transition: all 0.4s; }
+
+.navigation__item {
+  list-style: none; }
+  .navigation__item:not(:last-child) {
+    border-bottom: 1px solid #dfb183; }
+
+.navigation__link {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #dfb183;
+  padding: 2rem;
+  text-decoration: none;
+  letter-spacing: 2px; }
+  .navigation__link:hover {
+    background-color: #dfb183;
+    color: #fcece5; }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  transform: translateX(-30rem); }
