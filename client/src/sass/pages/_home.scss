@@ -1,17 +1,19 @@
 .hero {
-  height: 90vh;
+  height: 80vh;
   position: relative;
-  background-image: url(http://localhost:3000/images/macaron.png);
-  background-size: cover;
+  
 
   &__text {
     text-align: center;
     width: 100%;
     background-color: white;
     position: absolute;
-    top: 30vh;
-    animation: moveInBottom 1s;
+    top: 13vh;
 
+    & img, & h2 {
+      animation: moveInLeft 1s;
+    }
+    
     &:before,
     &:after {
       content: '';
@@ -22,13 +24,13 @@
     }
 
     &:before {
-      top: -30px;
+      top: -25px;
       background-image: url(http://localhost:3000/images/up.png);
       background-size: repeat-x;
     }
 
     &:after {
-      bottom: -30px;
+      bottom: -25px;
       background-image: url(http://localhost:3000/images/down.png);
       background-size: repeat-x;
     }

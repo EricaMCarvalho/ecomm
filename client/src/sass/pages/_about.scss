@@ -1,0 +1,16 @@
+.about {
+  &__text-box {
+    padding: 2rem;
+    margin: 1rem;
+    line-height: 2;
+    width: 90%;
+    font-size: 1.5rem;
+    color: $color-primary;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  }
+}
