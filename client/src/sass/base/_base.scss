@@ -13,16 +13,29 @@ html {
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(to right, $color-primary-light, white);
+  background-color: $color-white;
   position: relative;
 }
 
-main {
-  margin-top: 10rem;
-  width: 100%;
-  margin-bottom: 7rem;
+ul {
+  list-style: none;
 }
 
-li {
-  list-style: none;
+a {
+  text-decoration: none;
+  color: $color-primary;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  margin: auto;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+  max-width: $max-grid-width;
+  padding: 0 2rem;
+  overflow: hidden;
+  min-height: 100vh;
 }

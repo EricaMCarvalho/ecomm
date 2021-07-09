@@ -55,7 +55,7 @@
   // SIDEBAR
   &__nav {
     position: fixed;
-    background-color: $color-primary-light;
+    @include set-background($color-primary-light);
     top: 8rem;
     right: -$sidebar-size;
     width: $sidebar-size;
@@ -80,8 +80,9 @@
     letter-spacing: 2px;
 
     &:hover {
-      background-color: $color-primary;
-      color: $color-primary-light;
+      // background-color: $color-primary;
+      @include set-background($color-primary);
+      // color: $color-primary-light;
     }
   }
 

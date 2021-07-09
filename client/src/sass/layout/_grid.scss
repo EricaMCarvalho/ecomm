@@ -1,8 +1,4 @@
 .row {
-  max-width: $max-grid-width;
-  margin: 0 auto;
-  text-align: center;
-
   @include clearfix;
 
   [class^='col-'] {

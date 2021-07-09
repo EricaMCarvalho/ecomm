@@ -17,11 +17,11 @@ const ProductsPage = () => {
   return (
     <>
       <h1 className='heading-primary'>Nossos Produtos</h1>
-      <h2 className='heading-secondary'>Algum texto aqui</h2>
+      <h2 className='heading-secondary'>Conheça nossos produtos</h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>Error</p>
+        <p>{error}</p>
       ) : (
         <ProductList products={products} />
       )}

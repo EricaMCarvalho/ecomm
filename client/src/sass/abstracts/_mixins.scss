@@ -1,3 +1,8 @@
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
 @mixin abs-center {
   & {
     position: absolute;

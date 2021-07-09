@@ -13,11 +13,11 @@ COLORS
 #FEC5BB
 */
 
-$color-primary: rgb(223, 177, 131);
+$color-primary: darken(rgb(222, 180, 134), 5%);
 $color-primary-light: #fcece5;
-$color-primary-dark: rgb(230, 191, 152);
+$color-primary-dark: darken(rgb(222, 180, 134), 15%);
 
-$color-grey-light-1: #f7f7f7;
+$color-grey-light: #ccc;
 $color-grey-dark-1: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
