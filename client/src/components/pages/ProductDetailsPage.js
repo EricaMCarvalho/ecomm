@@ -52,7 +52,9 @@ const ProductDetailsPage = ({ match }) => {
                 <label htmlFor='qty'>Quantidade:</label>
                 <select name='qty' id='qty'>
                   {[...Array(product.countInStock).keys()].map((q) => (
-                    <option value={q}>{q}</option>
+                    <option key={q} value={q}>
+                      {q}
+                    </option>
                   ))}
                 </select>
                 <button className='button button-primary'>
