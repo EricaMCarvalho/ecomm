@@ -1,9 +1,11 @@
 .about {
   background-color: $color-primary-light;
 
-  @include respond(tab-port) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  &-inner {
+    @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__text {
