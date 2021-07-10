@@ -13,10 +13,10 @@
   .search-bar,
   .custom-dropdown {
     margin: 1rem;
-    width: 30rem;
   }
 
   .search-bar {
+    width: 95vw;
     border-radius: 2rem;
     border: 1px solid $color-primary;
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
@@ -47,12 +47,12 @@
   }
 
   .custom-dropdown {
-    width: 20rem;
-
     &-label,
     &-item {
+      width: 20rem;
       padding: 1rem;
-
+      background-color: rgba($color-primary-light, 0.9);
+      color: $color-primary;
       box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
       height: 4rem;
       font-size: 1.5rem;
@@ -62,17 +62,12 @@
       font-family: inherit;
       border: 1.5px solid $color-primary;
       box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
-      background-color: $color-primary;
-      color: $color-primary-light;
     }
     &-item {
       border: 0.3px solid $color-primary;
-      background-color: rgba($color-primary-light, 0.9);
-      color: $color-primary;
 
       &-container {
         position: absolute;
-        width: 19rem;
       }
 
       &:hover {

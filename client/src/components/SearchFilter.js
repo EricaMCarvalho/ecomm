@@ -16,7 +16,7 @@ const SearchFilter = () => {
           placeholder='Faça sua busca'
         />
       </div>
-      <Dropdown label='Categoria do produto'>
+      <Dropdown label='Categoria'>
         {categories.map((category) => (
           <DropdownItem key={category} value={category} />
         ))}
