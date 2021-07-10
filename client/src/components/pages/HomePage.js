@@ -22,19 +22,22 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <h1 className='heading-primary'>Produtos em destaque</h1>
-      <h2 className='heading-secondary'>
-        <i className='fas fa-cookie-bite'></i> Novidades e mais vendidos
-      </h2>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Alert variant='danger'>{error}</Alert>
-      ) : (
-        <ProductList
-          products={products.filter((product) => product.isFeatured)}
-        />
-      )}
+      <section className='my-2'>
+        <h1 className='heading-primary'>Produtos em destaque</h1>
+        <h2 className='heading-secondary'>
+          <i className='fas fa-cookie-bite'></i> Novidades e mais vendidos
+        </h2>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Alert variant='danger'>{error}</Alert>
+        ) : (
+          <ProductList
+            products={products.filter((product) => product.isFeatured)}
+          />
+        )}
+      </section>
+
       <AboutPage />
       <ContactPage />
     </>
