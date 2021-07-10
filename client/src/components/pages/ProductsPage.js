@@ -4,6 +4,7 @@ import { listProducts } from '../../actions/productActions';
 import Alert from '../Alert';
 import Loader from '../Loader';
 import ProductList from '../ProductList';
+import SearchFilter from '../SearchFilter';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const ProductsPage = () => {
       <h2 className='heading-secondary'>
         <i className='fas fa-cookie-bite'></i> Conheça nossos produtos
       </h2>
+      <SearchFilter />
       {loading ? (
         <Loader />
       ) : error ? (

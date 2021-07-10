@@ -336,6 +336,61 @@ body {
   100% {
     transform: rotate(360deg); } }
 
+.search-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; }
+  @media (min-width: 37.5em) {
+    .search-filter {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start; } }
+  .search-filter .search-bar,
+  .search-filter .custom-dropdown {
+    margin: 1rem;
+    width: 30rem; }
+  .search-filter .search-bar {
+    border-radius: 2rem;
+    border: 1px solid #d9a872;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 1.2rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; }
+    .search-filter .search-bar-input {
+      outline: none;
+      width: 100%;
+      height: 80%;
+      font-family: inherit;
+      font-size: 1.6rem;
+      color: #d9a872;
+      border: none;
+      padding: 0.2rem 0.2rem 0.2rem 0.2rem; }
+      .search-filter .search-bar-input::placeholder {
+        color: #d9a872; }
+    .search-filter .search-bar-icon {
+      padding-right: 0.5rem; }
+  .search-filter .custom-dropdown {
+    position: relative; }
+    .search-filter .custom-dropdown-label, .search-filter .custom-dropdown-item {
+      min-width: 30rem;
+      padding: 1rem;
+      border: 1px solid #d9a872;
+      box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+      height: 4rem;
+      background-color: rgba(252, 236, 229, 0.9);
+      color: #d9a872;
+      font-size: 1.5rem; }
+    .search-filter .custom-dropdown-label {
+      font-family: inherit; }
+    .search-filter .custom-dropdown-item-container {
+      position: absolute; }
+    .search-filter .custom-dropdown-item:hover {
+      background-color: #d9a872;
+      color: #fcece5; }
+
 .footer {
   background-color: #fcece5;
   color: #d9a872;
@@ -529,7 +584,7 @@ body {
       grid-template-columns: 1fr 2fr 1fr; } }
 
 .product-list {
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr; }
   @media (min-width: 37.5em) {

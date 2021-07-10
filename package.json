@@ -4,8 +4,10 @@
   "description": "Roma Doces de Vitrine",
   "main": "server.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon server.js",
-    "start": "NODE_ENV=production node server.js"
+    "server": "NODE_ENV=development nodemon server.js",
+    "client": "npm start --prefix client",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,6 @@
   "homepage": "https://github.com/EricaMCarvalho/roma-ecomm#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrently": "^6.2.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "concurrently": "^6.2.0"
   }
 }

@@ -50,6 +50,7 @@ const ProductDetailsPage = ({ match }) => {
               )}
               <form className='form'>
                 <label htmlFor='qty'>Quantidade:</label>
+
                 <select name='qty' id='qty'>
                   {[...Array(product.countInStock).keys()].map((q) => (
                     <option key={q} value={q}>
@@ -57,6 +58,7 @@ const ProductDetailsPage = ({ match }) => {
                     </option>
                   ))}
                 </select>
+
                 <button className='button button-primary'>
                   <i className='fas fa-shopping-bag'></i> Adicionar à sacola
                 </button>
