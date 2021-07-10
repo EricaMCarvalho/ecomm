@@ -6,6 +6,7 @@ import ContactPage from './ContactPage';
 import Hero from '../Hero';
 import { listProducts } from '../../actions/productActions';
 import Alert from '../Alert';
+import Loader from '../Loader';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const HomePage = () => {
         <i className='fas fa-cookie-bite'></i> Novidades e mais vendidos
       </h2>
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : error ? (
         <Alert variant='danger'>{error}</Alert>
       ) : (

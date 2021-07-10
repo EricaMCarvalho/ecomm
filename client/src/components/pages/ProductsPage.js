@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../actions/productActions';
 import Alert from '../Alert';
+import Loader from '../Loader';
 import ProductList from '../ProductList';
 
 const ProductsPage = () => {
@@ -22,7 +23,7 @@ const ProductsPage = () => {
         <i className='fas fa-cookie-bite'></i> Conheça nossos produtos
       </h2>
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : error ? (
         <Alert variant='danger'>{error}</Alert>
       ) : (

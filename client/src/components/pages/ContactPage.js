@@ -6,7 +6,7 @@ const ContactPage = () => {
     <div>
       <h1 className='heading-primary'>Fale conosco</h1>
       <h2 className='heading-secondary'>
-        <i class='far fa-envelope'></i> Encomenda e informação
+        <i className='far fa-envelope'></i> Encomenda e informação
       </h2>
       <form className='form'>
         <div className='form-group'>
@@ -23,12 +23,12 @@ const ContactPage = () => {
         </div>
         <div className='form-group'>
           <label htmlFor='message'>Mensagem</label>
-          <textarea rows='5' id='message' required></textarea>
+          <textarea rows='4' id='message' required></textarea>
         </div>
         <button className='button button-primary button-center'>Enviar</button>
       </form>
-      <p className='my-2 text-center'>
-        Fale conosco pelas redes sociais
+      <div className='my-2 text-center'>
+        Fale conosco pelas redes sociais:
         <div className='icons'>
           <Link to='#'>
             <i className='fab fa-whatsapp 3x'></i>
@@ -37,7 +37,7 @@ const ContactPage = () => {
             <i className='fab fa-instagram 3x'></i>
           </Link>
         </div>
-      </p>
+      </div>
     </div>
   );
 };

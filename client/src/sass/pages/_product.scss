@@ -1,0 +1,11 @@
+.product-details {
+  display: grid;
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
