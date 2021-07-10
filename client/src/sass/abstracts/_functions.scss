@@ -1,7 +1,7 @@
 @function set-text-color($color) {
   @if (lightness($color) > 70) {
-    @return $color-primary;
+    @return darken($color, 30%);
   } @else {
-    @return $color-primary-light;
+    @return lighten($color, 30%);
   }
 }

@@ -1,29 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toRealCurrency } from '../helpers';
 
 const ProductList = ({ products }) => {
   return (
-    <ul className='row'>
+    <div className='product-list'>
       {products.map((product) => (
-        <li
+        <Link
+          to={`/produtos/${product._id}`}
           key={product._id}
-          className='col-phone-6 col-tab-port-4 col-tab-land-3 col-desktop-3 card'
+          className='product-list__item'
         >
-          <Link to={`/produtos/${product._id}`}>
-            <div className='product-item'>
-              <img
-                src={product.image}
-                alt={product.name}
-                className='product-item__image'
-              />
-              <h3 className='heading-tertiary'>{product.name}</h3>
-              <h4 className='heading-quaternary'>R$ {product.price}</h4>
-              <div className='image-box'></div>
-            </div>
-          </Link>
-        </li>
+          <img className='' src={product.image} alt={product.name} />
+          <div className='product-list__item-info'>
+            <h2 className='heading-tertiary'>{product.name}</h2>
+            <h3 className='heading-quaternary'>
+              <i className='fas fa-tag'></i> {toRealCurrency(product.price)}
+            </h3>
+            {product.promo && (
+              <small className='small-text'>{product.promo}</small>
+            )}
+          </div>
+        </Link>
       ))}
-    </ul>
+    </div>
   );
 };
 

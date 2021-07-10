@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../actions/productActions';
+import Alert from '../Alert';
 import ProductList from '../ProductList';
 
 const ProductsPage = () => {
@@ -17,11 +18,13 @@ const ProductsPage = () => {
   return (
     <>
       <h1 className='heading-primary'>Nossos Produtos</h1>
-      <h2 className='heading-secondary'>Conheça nossos produtos</h2>
+      <h2 className='heading-secondary'>
+        <i className='fas fa-cookie-bite'></i> Conheça nossos produtos
+      </h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <Alert variant='danger'>{error}</Alert>
       ) : (
         <ProductList products={products} />
       )}

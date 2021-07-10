@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Alert from '../Alert';
 
 const RegisterPage = () => {
   return (

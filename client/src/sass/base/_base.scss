@@ -33,9 +33,12 @@ img {
 .container {
   margin: auto;
   margin-top: 8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   max-width: $max-grid-width;
-  padding: 0 2rem;
   overflow: hidden;
   min-height: 100vh;
+
+  @include respond(tab-port) {
+    padding: 0 2rem;
+  }
 }

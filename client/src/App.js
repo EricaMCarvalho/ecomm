@@ -8,6 +8,7 @@ import ContactPage from './components/pages/ContactPage';
 import AboutPage from './components/pages/AboutPage';
 import ProductDetailsPage from './components/pages/ProductDetailsPage';
 import RegisterPage from './components/pages/RegisterPage';
+import LoginPage from './components/pages/LoginPage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path='/contato' component={ContactPage} />
         <Route exact path='/sobre-nos' component={AboutPage} />
         <Route exact path='/cadastro' component={RegisterPage} />
+        <Route exact path='/login' component={LoginPage} />
       </main>
       <Footer />
     </BrowserRouter>

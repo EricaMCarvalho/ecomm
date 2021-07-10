@@ -6,7 +6,6 @@
 
   &-light {
     @include set-background($color-primary-light);
-    border: 1px solid $color-primary;
   }
 
   &-dark {
@@ -29,6 +28,15 @@
 
 .overlay-dark {
   background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-light {
+  background-color: rgba($color-primary-light, 0.7);
   position: absolute;
   top: 0;
   left: 0;
