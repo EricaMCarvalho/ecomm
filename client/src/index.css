@@ -581,8 +581,12 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+.product-details-title {
+  margin-bottom: 2rem; }
+
 .product-details-grid__info {
-  padding: 1rem; }
+  padding: 2rem;
+  text-align: center; }
 
 @media (min-width: 37.5em) {
   .product-details-grid {
@@ -597,6 +601,19 @@ body {
 
 .product-description {
   line-height: 2.5rem; }
+
+.product-form select {
+  display: inline-block;
+  background-color: #fcece5;
+  color: #d9a872;
+  padding: 0.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  outline: none;
+  box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.2);
+  border: 1px solid #d9a872; }
 
 .product-list {
   margin-top: 0.5rem;

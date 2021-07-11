@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetails } from '../../actions/productActions';
 import Loader from '../Loader';
-import Dropdown from '../Dropdown';
-import DropdownItem from '../DropdownItem';
 import Alert from '../Alert';
 import { toRealCurrency } from '../../helpers';
 
 const ProductDetailsPage = ({ match }) => {
+  const [qty, setQty] = useState(0);
   const dispatch = useDispatch();
 
   const { loading, product, error } = useSelector(
@@ -21,7 +20,7 @@ const ProductDetailsPage = ({ match }) => {
 
   return (
     <>
-      <Link to='/produtos' className='button my-2'>
+      <Link to='/produtos' className='button m-2'>
         <i className='far fa-arrow-alt-circle-left'></i> Voltar
       </Link>
       {loading ? (
@@ -31,7 +30,7 @@ const ProductDetailsPage = ({ match }) => {
       ) : (
         <>
           <div className='product-details'>
-            <h1 className='heading-primary my-1'>
+            <h1 className='heading-primary product-details-title'>
               <i className='fas fa-cookie-bite'></i> {product.name}
             </h1>
             <div className='product-details-grid'>
@@ -57,15 +56,24 @@ const ProductDetailsPage = ({ match }) => {
                     será cobrado(a) até que sua encomenda seja confirmada.
                   </Alert>
                 )}
-                <Dropdown className='my-2' label='Quantidade'>
-                  {[...Array(product.countInStock).keys()].map((q) => (
-                    <DropdownItem key={q} value={q} />
-                  ))}
-                </Dropdown>
+                <form className='product-form'>
+                  <label forHtml='qty'>Quantidade: </label>
+                  <select
+                    id='qty'
+                    value={qty}
+                    onChange={(e) => setQty(e.target.value)}
+                  >
+                    {[...Array(product.countInStock).keys()].map((q) => (
+                      <option key={q + 1} value={q + 1}>
+                        {q + 1}
+                      </option>
+                    ))}
+                  </select>
 
-                <button className='button button-primary m-2'>
-                  <i className='fas fa-shopping-bag'></i> Adicionar à sacola
-                </button>
+                  <button className='button button-primary m-2'>
+                    <i className='fas fa-shopping-bag'></i> Adicionar à sacola
+                  </button>
+                </form>
               </div>
             </div>
           </div>
