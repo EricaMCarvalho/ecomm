@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetails } from '../../actions/productActions';
 import Loader from '../Loader';
+import Dropdown from '../Dropdown';
+import DropdownItem from '../DropdownItem';
+import Alert from '../Alert';
 import { toRealCurrency } from '../../helpers';
 
 const ProductDetailsPage = ({ match }) => {
@@ -24,45 +27,46 @@ const ProductDetailsPage = ({ match }) => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <p>{error}</p>
+        <Alert variant='error'>{error}</Alert>
       ) : (
         <>
           <div className='product-details'>
-            <img src={product.image} alt={product.name} />
-            <div className='product-details__info'>
-              <h2 className='heading-secondary'>{product.name}</h2>
-              <h3 className='heading-quaternary'>
-                {toRealCurrency(product.price)}
-              </h3>
-              <p>{product.description}</p>
-            </div>
-            <div className='product-details__order'>
-              <h3 className='heading-quaternary'>
-                {toRealCurrency(product.price)}
-              </h3>
-              {product.countInStock > 0 ? (
-                <p>Disponibilidade imediata. Faça já o seu pedido!</p>
-              ) : (
-                <p>
-                  Este produto não possui disponibilidate imediata. Você não
-                  será cobrado(a) até que sua encomenda seja confirmada.
+            <h1 className='heading-primary my-1'>
+              <i className='fas fa-cookie-bite'></i> {product.name}
+            </h1>
+            <div className='product-details-grid'>
+              <img
+                className='product-details__image'
+                src={product.image}
+                alt={product.name}
+              />
+              <div className='product-details-grid__info'>
+                <h3 className='heading-quaternary product-price'>
+                  <i className='fas fa-tag'></i> {toRealCurrency(product.price)}
+                </h3>
+                <p className='product-description my-2'>
+                  {product.description}
                 </p>
-              )}
-              <form className='form'>
-                <label htmlFor='qty'>Quantidade:</label>
-
-                <select name='qty' id='qty'>
+                {product.countInStock > 0 ? (
+                  <Alert variant='success' className='my-2'>
+                    Disponibilidade imediata. Faça já o seu pedido!
+                  </Alert>
+                ) : (
+                  <Alert variant='danger'>
+                    Este produto não possui disponibilidate imediata. Você não
+                    será cobrado(a) até que sua encomenda seja confirmada.
+                  </Alert>
+                )}
+                <Dropdown className='my-2' label='Quantidade'>
                   {[...Array(product.countInStock).keys()].map((q) => (
-                    <option key={q} value={q}>
-                      {q}
-                    </option>
+                    <DropdownItem key={q} value={q} />
                   ))}
-                </select>
+                </Dropdown>
 
-                <button className='button button-primary'>
+                <button className='button button-primary m-2'>
                   <i className='fas fa-shopping-bag'></i> Adicionar à sacola
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </>
